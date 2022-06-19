@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod #Here P is Caps
+metadata: #Some info about pod
+  name: rhythmpod1 #This is my pod name like container name in docker
+spec:
+  containers: # about my docker image and container info
+    - name: rhythmcontainer1 #name of my container
+      image: nginx #name of image from dockerhub
+      ports:
+        - containerPort: 80 # same as expose port in Dockerfile

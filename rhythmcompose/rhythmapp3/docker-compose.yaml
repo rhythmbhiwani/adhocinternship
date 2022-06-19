@@ -1,0 +1,32 @@
+version: '3.5'
+services:
+  app:
+    image: rhythm:day12v1
+    build: 
+      context: . #Location of Dockerfile
+      dockerfile: Dockerfile #Name of dockerfile
+    container_name: rhythmcn
+    ports:
+      - "8080:80"
+    networks:
+      - rhybr111 #Network Bridge
+    volumes:
+      - rhyvol12:/mnt/google
+
+  app2:
+    image: rhythm:day12v2
+    build: 
+      context: . #Location of Dockerfile
+      dockerfile: Dockerfilenew #Name of dockerfile
+    container_name: rhythmcn2
+    ports:
+      - "8081:80"
+    networks:
+      - rhybr111 #Network Bridge
+    volumes:
+      - rhyvol12:/mnt/google
+
+networks:
+  rhybr111: #this will create new docker network
+volumes:
+  rhyvol12: #This will create new volume

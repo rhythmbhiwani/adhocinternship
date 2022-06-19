@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  rhythmapp1:
+    image: alpine
+    container_name: rhythmc1
+    command: ping youtube.com
+
+  rhythmapp2:
+    image: alpine
+    container_name: rhythmc2
+    command: ping google.com
